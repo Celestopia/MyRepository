@@ -1,0 +1,418 @@
+\documentclass[a4paper,10pt]{ctexart}
+
+\newcommand{\s}{\textbackslash}
+\usepackage{amsmath}
+\usepackage{float}
+
+\title{\LaTeX\ Notes}
+\author{SJH}
+\date{2023.10.5}
+\begin{document}
+\maketitle
+
+\section{自定义}
+
+\noindent
+\verb|\newcommand{...}{...}| 用前一个括号的指令表示后一个括号内的内容\\
+
+\section{公式}
+
+\verb|$...$| 行内公式\\
+
+\verb|$$...$$| 行间公式\\
+
+\verb|$...\tag{...}$| 给公式手动添加编号\\
+
+\verb|\begin{equation}...\end{equation}| 生成行间公式（带编号）\\
+
+\verb|\begin{equation*}...\end{equation*}| 生成行间公式（不带编号）\\
+
+\verb|\begin{align}...\end{align}| 生成公式（用\&对齐，\s\s 换行；带编号）\\
+
+\verb|\begin{align*}...\end{align*}| 生成公式（不带编号）\\
+
+\verb|\begin{split}...\end{split}| 生成公式（用\&对齐，\s\s 换行；只能对齐单列；需在其它公式环境下使用；不带编号）
+
+\verb|\begin{cases}...\end{cases}| 用大括号列举公式（用\s\s 换行；需在其它公式环境下使用）
+
+
+\section{其它}
+
+\noindent
+\verb|\today| 日期\\
+\verb|\tableofcontents| 目录\\
+\verb|\LaTeX| \LaTeX\\
+\verb|_| 下标（内容不止一个字符时，用大括号括起来)\\
+\verb|^| 上标（内容不止一个字符时，用大括号括起来)\\
+\% 单行注释\\
+\verb|\iffalse...\fi| 多行注释\\
+\verb'\verb|...|' 不经编译直接输出单行内容\\
+\verb|\verb'...'| 不经编译直接输出单行内容\\
+\verb|\begin{verbatim}...\end{verbatim}| 不经编译直接输出多行内容\\
+
+\section{数学符号}
+*以下指令需在公式环境中方可编译
+\subsection{运算符}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		$+$ &+ &$-$ &-\\
+		\hline
+		$\times$ &\verb|\times| &$\div$ &\verb|\div|\\
+		\hline
+		$\cdot$ &\verb|\cdot| &$\otimes$ &\verb|\otimes|\\
+		\hline
+		$\oplus$ &\verb|\oplus| &$\odot$ &\verb|\odot|\\
+		\hline
+		$\pm$ &\verb|\pm| &$\mp$ &\verb|\mp|\\
+		\hline
+		$\sqrt{\mathrm{A}}$ &\verb|\sqrt{A}|&$\sqrt[n]{A}$ &\verb|\sqrt[n]{A}|\\
+		\hline
+		$\frac{\mathrm{A}}{\mathrm{B}}$ &\verb|\frac{A}{B}|&&\\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{关系符}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\leq$ &\verb|\leq| &$\geq$ &\verb|\geq|\\
+		\hline
+		$\gg$ &\verb|\gg| &$\ll$ &\verb|\ll|\\
+		\hline
+		$\neq$ &\verb|\neq| &$\approx$ &\verb|\approx|\\
+		\hline
+		$\sim$ &\verb|\sim| &$\cong$ &\verb|\cong|\\
+		\hline
+		$\equiv$ &\verb|\equiv| &$\bmod$ &\verb|\bmod|\\
+		\hline
+		$\propto$ &\verb|\propto|&&\\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+\subsection{逻辑符}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\exists$ &\verb|\exists| &$\forall$ &\verb|\forall|\\
+		\hline
+		$\land$ &\verb|\land| &$\vee$ &\verb|\vee|\\
+		\hline
+		$\neg$ &\verb|\neg|&&\\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+\subsection{集合论}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\in$ &\verb|\in| &$\notin$ &\verb|\notin|\\
+		\hline
+		$\cap$ &\verb|\cap| &$\bigcap$ &\verb|\bigcap|\\
+		\hline
+		$\cup$ &\verb|\cup| &$\bigcup$ &\verb|\bigcup|\\
+		\hline
+		$\wedge$ &\verb|\wedge| &$\bigwedge$ &\verb|\bigwedge|\\
+		\hline
+		$\vee$ &\verb|\vee| &$\bigvee$ &\verb|\bigvee|\\
+		\hline
+		$\subset$ &\verb|\subset| &$\supset$ &\verb|\supset|\\
+		\hline
+		$\subseteq$ &\verb|\subseteq| &$\supseteq$ &\verb|\supseteq|\\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{分析}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		' &' &$\partial$ &\verb|\partial|\\
+		\hline
+		$\int$ &\verb|\int| &$\iint$ &\verb|\iint|\\
+		\hline
+		$\iiint$ &\verb|\iiint| &$\iiiint$ &\verb|\iiiint|\\
+		\hline
+		$\oint$ &\verb|\oint| &$\infty$ &\verb|\infty|\\
+		\hline
+		$\lim$ &\verb|\lim| &$\lim_{n\to\infty}$ &\verb|\lim_{n\to\infty}|\\
+		\hline
+		$\sum$ &\verb|\sum| &$\sum_{n=1}^{\infty}$ &\verb|\sum_{n=1}^{\infty}|\\
+		\hline
+		$\prod$ &\verb|\prod|&$\prod_{n=1}^{\infty}$ &\verb|\prod_{n=1}^{\infty}|\\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%$\varoiint$ \verb|\varoiint（需{esint}）|\\
+
+
+\subsection{括号类}
+\noindent
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		\verb|\left(| &左圆括号 &\verb|\right)| &右圆括号\\
+		\hline
+		\verb|\left[| &左方括号 &\verb|\right]| &右方括号\\
+		\hline
+		\verb|\left{| &左花括号 &\verb|\right}| &右花括号\\
+		\hline
+		\verb|\left\langle| &左角括号 &\verb|\right\rangle| &右角括号\\
+		\hline
+		\verb'\left|' &左单竖线/绝对值 &\verb'\right|' &右单竖线/绝对值\\
+		\hline
+		\verb'\left\|' &左双竖线/范数 &\verb'\right\|' &右双竖线/范数\\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{附加记号}
+\noindent
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+		\hline
+		\verb|\vec{...}| &$\vec{x}$ &向量\\
+		\hline
+		\verb|\bar{...}| &$\bar{x}$ &上横线\\
+		\hline
+		\verb|\overline{...}| &$\overline{xyz}$ &上水平线\\
+		\hline
+		\verb|\underline{...}| &$\overline{xyz}$ &下水平线\\
+		\hline
+		\verb|\overbrace{...}| &$\overbrace{xyz}$ &上水平大括号\\
+		\hline
+		\verb|\underbrace{...}| &$\underbrace{xyz}$ &下水平大括号\\
+		\hline
+		\verb|\tilde{...}| &$\tilde{x}$ &波浪线\\
+		\hline
+		\verb|\widetilde{...}| &$\widetilde{xyz}$ &大波浪线\\
+		\hline
+		\verb|\hat{...}| &$\hat{x}$ &尖帽\\
+		\hline
+		\verb|\widehat{...}| &$\widehat{xyz}$ &宽尖帽\\
+		\hline
+		\verb|\dot{...}| &$\dot{x}$ &上加点\\
+		\hline
+		\verb|\overrightarrow{...}| &$\overrightarrow{xyz}$ &上右箭头\\
+		\hline
+		\verb|\underrightarrow{...}| &$\underrightarrow{xyz}$ &下右箭头\\
+		\hline
+		\verb|\overleftarrow{...}| &$\overleftarrow{xyz}$ &上左箭头\\
+		\hline
+		\verb|\underleftarrow{...}| &$\underleftarrow{xyz}$ &下左箭头\\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{希腊字母}
+\noindent
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\alpha$ &\verb|\alpha| &$\beta$ &\verb|\beta|\\
+		\hline
+		$\gamma$ &\verb|\gamma| &$\Gamma$ &\verb|\Gamma|\\
+		\hline
+		$\delta$ &\verb|\delta| &$\Delta$ &\verb|\Delta|\\
+		\hline
+		$\epsilon$ &\verb|\epsilon| &$\varepsilon$ &\verb|\varepsilon|\\
+		\hline
+		$\zeta$ &\verb|\zeta| &$\eta$ &\verb|\eta|\\
+		\hline
+		$\theta$ &\verb|\theta| &$\vartheta$ &\verb|\vartheta|\\
+		\hline
+		$\Theta$ &\verb|\Theta| &$\iota$ &\verb|\iota|\\
+		\hline
+		$\kappa$ &\verb|\kappa| &$\lambda$ &\verb|\lambda|\\
+		\hline
+		$\mu$ &\verb|\mu| &$\nu$ &\verb|\nu|\\
+		\hline
+		$\xi$ &\verb|\xi| &$\Xi$ &\verb|\Xi|\\
+		\hline
+		$\pi$ &\verb|\pi| &$\Pi$ &\verb|\Pi|\\
+		\hline
+		$\rho$ &\verb|\rho| &$\varrho$ &\verb|\varrho|\\
+		\hline
+		$\sigma$ &\verb|\sigma| &$\Sigma$ &\verb|\Sigma|\\
+		\hline
+		$\tau$ &\verb|\tau| &$\varphi$ &\verb|\varphi|\\
+		\hline
+		$\phi$ &\verb|\phi| &$\Phi$ &\verb|\Phi|\\
+		\hline
+		$\psi$ &\verb|\psi| &$\Psi$ &\verb|\Psi|\\
+		\hline
+		$\upsilon$ &\verb|\upsilon| &$\Upsilon$ &\verb|\Upsilon|\\
+		\hline
+		$\omega$ &\verb|\omega| &$\Omega$ &\verb|\Omega|\\
+		\hline
+		$\chi$ &\verb|\chi|&&\\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{字体}
+\noindent
+\verb|\mathrm{...}| 正体\\
+\verb|\mathbf{...}| 黑体\\
+\verb|\mathbb{...}| 黑粗体\\
+\verb|\mathscr{...}| 花体（需\{mathrsfs\}）\\
+
+\subsection{其它}
+\noindent
+\verb|\text{...}| 公式中插入文字\\
+\verb|\quad| 生成宽度一个m的空格\\
+\verb|\qquad| 生成宽度两个m的空格\\
+\verb|\!| 缩进六分之一个m的距离\\
+
+
+
+\section{页面与文档}
+
+\noindent
+\s documentclass[options]\{parameter\}
+\begin{itemize}
+	\item parameter: article, report, book
+	\item options:
+	\begin{itemize}
+		\item font: 10pt, 11pt...
+		\item pagesize: a4paper, b5paper...
+		\item column: onecolumn, twocolumn...
+	\end{itemize}
+\end{itemize}
+\verb|\noindent| 取消段落首行缩进\\
+\verb|\par| 换行并缩进\\
+\verb|\footnote{...}| 添加脚注\\
+
+\section{列表}
+\noindent
+\verb|\begin{parameter}...\end{parameter}|
+\begin{itemize}
+	\item parameter:
+	\begin{itemize}
+		\item itemize: unordered list
+		\item enumerate: ordered list
+	\end{itemize}
+	\item Use \verb|\item| to mark every element in the list.
+\end{itemize}
+
+\section{插入图片}
+\noindent
+首先引入graphicx宏包：\verb|\usepackage{graphicx}| \\
+\verb|\begin{figure}[options]...\end{figure}| 创建图片环境。\\
+\verb|\includegraphics[options]{...}| 引入图片。需将图片与.tex文件置于同一目录下。图片名中无需添加后缀。options示例：[width=8cm, height=5cm]。\\
+\verb|\begin{center}...\end{center}|创建居中环境，\verb|\centering|也可表示居中。\\
+\verb|\caption{...}|生成标题，\verb|\label{...}|生成标签，用\verb|\ref{...}|引用。\\
+
+
+例：
+\begin{verbatim}
+\begin{figure}
+	\begin{center}
+	\includegraphics{trialgraph}
+	\end{center}
+	\caption{trial graph 1}
+\end{figure}
+\end{verbatim}
+
+
+\section{插入表格}
+\noindent
+\begin{enumerate}
+	\item \verb|\begin{table}[parameters]...\end{table}| 
+	创建表格环境
+	\item \verb|\begin{tabular}{[parameters]}...\end{tabular}| 
+	创建表体环境。可在table环境中创建，也可单独创建。
+\end{enumerate}
+
+tabular参数格式：\verb'|l|c|c|r|' 。\verb'|'代表纵向分割线。\verb'||'可在相应位置生成双竖线分割线，无\verb'|'则无分割线；l，c，r分别代表左对齐、居中、右对齐，其总数代表表格列数。
+左右相邻单元格内容用\&分开，\verb|\\|标志一行结束，\verb|\hline| 生成水平分割线，重复使用
+\verb|\hline|生成水平双线。
+
+table参数格式：h表示当前，t表示顶部，b表示底部，p表示置于浮动页；字母后加！表示强制放置于指示的位置；可组合使用，如ht表示当前位置顶部；引入float包后可使用H参数强制表格放置于当前位置。
+
+\verb|\begin{center}...\end{center}|创建居中环境；\verb|\centering|也可表示居中。
+\verb|\caption{...}|生成标题，\verb|\label{...}|生成标签，用\verb|\ref{...}|引用。
+
+
+	例：
+	\begin{verbatim}
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{||c|c|c|c||}
+			\hline\hline
+			$\alpha$ &\verb|\alpha| &$\beta$ &\verb|\beta|\\
+			\hline
+			$\gamma$ &\verb|\gamma| &$\Gamma$ &\verb|\Gamma|\\
+			\hline
+			$\delta$ &\verb|\delta| &$\Delta$ &\verb|\Delta|\\
+			\hline\hline
+			\end{tabular}
+		\end{center}
+		\caption{\LaTeX 部分希腊字母对应代码}
+	\end{table}
+	\end{verbatim}
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{||c|c|c|c||}
+			\hline\hline
+			$\alpha$ &\verb|\alpha| &$\beta$ &\verb|\beta|\\
+			\hline
+			$\gamma$ &\verb|\gamma| &$\Gamma$ &\verb|\Gamma|\\
+			\hline
+			$\delta$ &\verb|\delta| &$\Delta$ &\verb|\Delta|\\
+			\hline\hline
+			\end{tabular}
+		\end{center}
+		\caption{\LaTeX 部分希腊字母对应代码}
+	\end{table}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
